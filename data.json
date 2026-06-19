@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "日本沖繩消費紀錄",
+    "subtitle": "2026 年 6 月 6 日 — 6 月 9 日",
+    "footer": "整理日期：2026 年 6 月 19 日 · 資料來源：31 張發票照片"
+  },
+  "notes": [
+    "31 筆消費金額皆不相同，無重複計帳風險。",
+    "4 張信用卡簽單（¥800、¥11,000、¥1,670、¥2,693）僅有金額，店名與品項待確認。",
+    "かなさんやー（¥17,950）收據未印日期；イオン名護（¥17,853）日期印刷略模糊。",
+    "原始照片存放於 發票/ 資料夾，檔名對應表中「照片」欄位。"
+  ],
+  "receipts": [
+    { "id": 1, "date": "2026-06-06", "time": "13:33", "amount": 1500, "location": "豚卵 那覇空港国内線店", "items": "飯糰 ×2", "group": "food", "tag": "餐飲", "photo": "213802", "flag": "不算" },
+    { "id": 2, "date": "2026-06-06", "time": "14:37", "amount": 42010, "location": "Orix租車", "items": "Orix 租車", "group": "transport", "tag": "租車", "photo": "214400", "flag": "平分" },
+    { "id": 3, "date": "2026-06-06", "time": "16:15", "amount": 800, "location": "瀨長島", "items": "冰淇淋", "group": "shop", "tag": "購物", "photo": "213807", "flag": "不算" },
+    { "id": 4, "date": "2026-06-06", "time": "20:27", "amount": 663, "location": "LAWSON 美浜フィッシャリーナ店（北谷町）", "items": "冰品 ×3", "group": "market", "tag": "便利商店", "photo": "214330", "flag": "不算" },
+    { "id": 5, "date": "2026-06-06", "time": "22:10", "amount": 6518, "location": "名護 AEON（WAON 加盟店）", "items": "超市雜貨 27 項", "group": "market", "tag": "超市", "photo": "214100", "flag": "平分" },
+    { "id": 6, "date": "2026-06-06", "time": "23:01", "amount": 463, "location": "LAWSON 名桜大学前店（名護市）", "items": "飲料＋日用品", "group": "market", "tag": "便利商店", "photo": "213821", "flag": "不算" },
+    { "id": 7, "date": "2026-06-06", "time": "18:00", "amount": 17950, "location": "沖繩料理 かなさんやー（北谷町美浜 3F）", "items": "沖繩料理套餐多品項", "group": "food", "tag": "餐飲", "photo": "213712", "flag": "不算" },
+    { "id": 8, "date": "2026-06-07", "time": "09:14", "amount": 11000, "location": "名護花店", "items": "求婚花束", "group": "shop", "tag": "禮物", "photo": "214254", "flag": "不算" },
+    { "id": 9, "date": "2026-06-07", "time": "09:34", "amount": 282, "location": "LAWSON 名桜大学前店（名護市）", "items": "礦泉水 ×2", "group": "market", "tag": "便利商店", "photo": "213828", "flag": "不算" },
+    { "id": 10, "date": "2026-06-07", "time": "11:04", "amount": 6000, "location": "古宇利オーシャンタワー（今帰仁村）", "items": "入場券 大人 ×6", "group": "tour", "tag": "觀光", "photo": "213924", "flag": "永峻付" },
+    { "id": 11, "date": "2026-06-07", "time": "11:11", "amount": 1200, "location": "古宇利オーシャンタワー（今帰仁村）", "items": "合照照片", "group": "tour", "tag": "觀光", "photo": "214244", "flag": "不算" },
+    { "id": 12, "date": "2026-06-07", "time": "15:00", "amount": 600, "location": "万座毛入場施設（恩納村）", "items": "観覧券 ×6", "group": "tour", "tag": "觀光", "photo": "214226", "flag": "永峻付" },
+    { "id": 13, "date": "2026-06-07", "time": "15:02", "amount": 740, "location": "シロップ 万座毛（恩納村）", "items": "綾鷹茶＋木製磁鐵", "group": "shop", "tag": "紀念品", "photo": "213849", "flag": "不算" },
+    { "id": 14, "date": "2026-06-07", "time": "17:46", "amount": 3806, "location": "ハ・ライスリー・オキナワ（名護）", "items": "生日蛋糕", "group": "food", "tag": "餐飲", "photo": "213921", "flag": "不算" },
+    { "id": 15, "date": "2026-06-07", "time": "17:46", "amount": 17853, "location": "イオン名護店（AEON 琉球）", "items": "超市雜貨 45 項", "group": "market", "tag": "超市", "photo": "213941", "flag": "平分" },
+    { "id": 16, "date": "2026-06-08", "time": "13:27", "amount": 1110, "location": "A&W アンドダブリュー", "items": "速食", "group": "food", "tag": "餐飲", "photo": "214354", "flag": "不算" },
+    { "id": 17, "date": "2026-06-08", "time": "13:34", "amount": 1507, "location": "鳥と卵の専門店 烏玉（浦添バルコシティ）", "items": "定食＋生蛋", "group": "food", "tag": "餐飲", "photo": "214039", "flag": "不算" },
+    { "id": 18, "date": "2026-06-08", "time": "16:28", "amount": 429, "location": "THANKYOU MART 浦添バルコシティ店", "items": "日用品 1 項", "group": "shop", "tag": "購物", "photo": "214202", "flag": "不算" },
+    { "id": 19, "date": "2026-06-08", "time": "16:37", "amount": 330, "location": "3COINS+plus 沖繩パルコシティ店", "items": "湯匙", "group": "shop", "tag": "日用品", "photo": "214213", "flag": "不算" },
+    { "id": 20, "date": "2026-06-08", "time": "16:57", "amount": 2693, "location": "parco city", "items": "牛奶，葡萄軟糖", "group": "market", "tag": "超市", "photo": "214311", "flag": "不算" },
+    { "id": 21, "date": "2026-06-08", "time": "17:29–18:00", "amount": 500, "location": "ザ・パーク天神前 停車場", "items": "停車費", "group": "transport", "tag": "交通", "photo": "214047", "flag": "不算" },
+    { "id": 22, "date": "2026-06-08", "time": "18:37", "amount": 51300, "location": "沖繩市區飯店", "items": "住宿費", "group": "unknown", "tag": "住宿", "photo": "213959", "flag": "平分" },
+    { "id": 23, "date": "2026-06-08", "time": "18:59", "amount": 6253, "location": "加油站（店名未印）", "items": "汽油 35.13L", "group": "transport", "tag": "交通", "photo": "214123", "flag": "平分" },
+    { "id": 24, "date": "2026-06-08", "time": "19:09", "amount": 1670, "location": "店家未載明", "items": "衛生棉", "group": "market", "tag": "日用品", "photo": "214025", "flag": "不算" },
+    { "id": 25, "date": "2026-06-08", "time": "19:21", "amount": 598, "location": "LAWSON 那覇東町店", "items": "即食麵 ×2", "group": "market", "tag": "便利商店", "photo": "214153", "flag": "不算" },
+    { "id": 26, "date": "2026-06-08", "time": "20:15", "amount": 1047, "location": "Starbucks 那覇デパートリウボウ店", "items": "抹茶拿鐵＋熱狗", "group": "food", "tag": "餐飲", "photo": "214427", "flag": "方方的" },
+    { "id": 27, "date": "2026-06-08", "time": "12:56", "amount": 25655, "location": "Uniqlo", "items": "爸爸媽媽衣服以及方方淵儒衣服", "group": "shop", "tag": "購物", "photo": "214501", "flag": "部分平分" },
+    { "id": 28, "date": "2026-06-08", "time": "23:11", "amount": 52134, "location": "唐吉軻德", "items": "購物", "group": "shop", "tag": "購物", "photo": "214445", "flag": "平分" },
+    { "id": 29, "date": "2026-06-09", "time": "10:00", "amount": 8000, "location": "台灣虎航 Tigerair（OKA 那覇機場）", "items": "機場超重行李 15KG", "group": "transport", "tag": "交通", "photo": "214336", "flag": "平分" },
+    { "id": 30, "date": "2026-06-09", "time": "13:12", "amount": 550, "location": "Blue Seal 那覇空港国際線ターミナル店", "items": "鹽奶＆紅芋冰淇淋", "group": "food", "tag": "餐飲", "photo": "214134", "flag": "不算" },
+    { "id": 31, "date": "2026-06-09", "time": "15:28", "amount": 990, "location": "店家未印（收據頂部裁切）", "items": "水果果汁 ×4", "group": "food", "tag": "飲料", "photo": "214413", "flag": "不算" },
+    { "id": 32, "date": "2026-06-06", "time": "21:00", "amount": 70000, "location": "Lieata Nakayama", "items": "住宿費用", "group": "unknown", "tag": "住宿", "photo": "", "flag": "平分" }
+  ]
+}
