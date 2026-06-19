@@ -18,16 +18,14 @@
       --accent: #0f766e;
       --accent-light: #ccfbf1;
       --accent-dark: #0d5c56;
+      --edit: #7c3aed;
+      --edit-light: #ede9fe;
       --shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.06);
       --radius: 12px;
       --radius-sm: 8px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: "Noto Sans TC", system-ui, sans-serif;
@@ -35,7 +33,10 @@
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
+      padding-bottom: 5rem;
     }
+
+    body.editing { padding-bottom: 6.5rem; }
 
     .page {
       max-width: 1120px;
@@ -43,7 +44,6 @@
       padding: 2.5rem 1.5rem 4rem;
     }
 
-    /* Header */
     .hero {
       background: linear-gradient(135deg, #0f766e 0%, #134e4a 55%, #1e3a5f 100%);
       color: #fff;
@@ -58,61 +58,36 @@
     .hero::after {
       content: "";
       position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 320px;
-      height: 320px;
+      top: -40%; right: -10%;
+      width: 320px; height: 320px;
       background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
 
-    .hero h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.5rem;
-      position: relative;
-    }
-
-    .hero p {
-      opacity: 0.88;
-      font-size: 0.95rem;
-      position: relative;
-    }
+    .hero h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; position: relative; }
+    .hero p { opacity: 0.88; font-size: 0.95rem; position: relative; }
 
     .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      position: relative;
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      margin-top: 1.5rem; position: relative;
     }
 
     .hero-stat {
-      background: rgba(255, 255, 255, 0.14);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.2);
       border-radius: var(--radius-sm);
       padding: 0.75rem 1.25rem;
       min-width: 140px;
     }
 
-    .hero-stat .label {
-      font-size: 0.75rem;
-      opacity: 0.8;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
+    .hero-stat .label { font-size: 0.75rem; opacity: 0.8; }
     .hero-stat .value {
-      font-size: 1.35rem;
-      font-weight: 700;
+      font-size: 1.35rem; font-weight: 700;
       font-family: "JetBrains Mono", monospace;
       margin-top: 0.15rem;
     }
 
-    /* Summary cards */
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -126,85 +101,47 @@
       border-radius: var(--radius-sm);
       padding: 1rem 1.1rem;
       box-shadow: var(--shadow);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .summary-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
-    }
-
-    .summary-card .cat {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 0.35rem;
-    }
-
+    .summary-card .cat { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.35rem; }
     .summary-card .amount {
       font-family: "JetBrains Mono", monospace;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--accent-dark);
+      font-size: 1.05rem; font-weight: 600; color: var(--accent-dark);
     }
-
-    .summary-card .count {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
+    .summary-card .count { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; }
 
     .summary-card.total {
       background: var(--accent-light);
       border-color: #99f6e4;
       grid-column: 1 / -1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.5rem;
     }
 
-    .summary-card.total .amount {
-      font-size: 1.4rem;
-    }
+    .summary-card.total .amount { font-size: 1.4rem; }
 
-    /* Section */
-    .section {
-      margin-bottom: 2.5rem;
-    }
+    .section { margin-bottom: 2.5rem; }
 
     .section-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1rem; flex-wrap: wrap;
     }
 
-    .section-header h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-    }
+    .section-header h2 { font-size: 1.15rem; font-weight: 600; }
 
     .date-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--accent); color: #fff;
+      font-size: 0.85rem; font-weight: 600;
+      padding: 0.35rem 0.85rem; border-radius: 999px;
     }
 
     .date-badge .subtotal {
       opacity: 0.85;
       font-family: "JetBrains Mono", monospace;
-      font-weight: 500;
       font-size: 0.8rem;
     }
 
-    /* Table */
     .table-wrap {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -213,75 +150,39 @@
       overflow: hidden;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-
-    thead {
-      background: var(--surface-alt);
-      border-bottom: 1px solid var(--border);
-    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead { background: var(--surface-alt); border-bottom: 1px solid var(--border); }
 
     th {
-      text-align: left;
-      padding: 0.85rem 1rem;
-      font-weight: 600;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
+      text-align: left; padding: 0.85rem 1rem;
+      font-weight: 600; font-size: 0.78rem;
+      color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.05em; white-space: nowrap;
     }
 
-    td {
-      padding: 0.9rem 1rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
+    td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: #f0fdfa; }
 
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    tbody tr:hover {
-      background: #f0fdfa;
-    }
+    body.editing tbody tr:hover { background: #faf5ff; }
 
     .amount-cell {
       font-family: "JetBrains Mono", monospace;
-      font-weight: 600;
-      color: var(--accent-dark);
-      white-space: nowrap;
-      text-align: right;
+      font-weight: 600; color: var(--accent-dark);
+      white-space: nowrap; text-align: right;
     }
 
     .time-cell {
       font-family: "JetBrains Mono", monospace;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      white-space: nowrap;
+      font-size: 0.82rem; color: var(--text-muted); white-space: nowrap;
     }
 
-    .location {
-      font-weight: 500;
-      line-height: 1.45;
-    }
-
-    .items {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
+    .location { font-weight: 500; line-height: 1.45; }
+    .items { color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; }
 
     .tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      margin-top: 0.35rem;
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 0.2rem 0.55rem; border-radius: 999px; margin-top: 0.35rem;
     }
 
     .tag-food { background: #fef3c7; color: #92400e; }
@@ -293,27 +194,22 @@
 
     .photo-ref {
       font-family: "JetBrains Mono", monospace;
-      font-size: 0.75rem;
-      color: var(--text-muted);
+      font-size: 0.75rem; color: var(--text-muted);
       background: var(--surface-alt);
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-      white-space: nowrap;
+      padding: 0.15rem 0.45rem; border-radius: 4px;
     }
+
+    .photo-ref a { color: var(--accent); text-decoration: none; }
+    .photo-ref a:hover { text-decoration: underline; }
 
     .flag {
-      display: inline-block;
-      font-size: 0.72rem;
-      color: #b45309;
-      background: #fffbeb;
+      display: inline-block; font-size: 0.72rem;
+      color: #b45309; background: #fffbeb;
       border: 1px solid #fde68a;
-      padding: 0.1rem 0.45rem;
-      border-radius: 4px;
+      padding: 0.1rem 0.45rem; border-radius: 4px;
       margin-left: 0.35rem;
-      vertical-align: middle;
     }
 
-    /* Notes */
     .notes {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -323,436 +219,529 @@
       box-shadow: var(--shadow);
     }
 
-    .notes h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
-      color: #b45309;
-    }
-
-    .notes ul {
-      list-style: none;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
+    .notes h3 { font-size: 0.95rem; margin-bottom: 0.75rem; color: #b45309; }
+    .notes ul { list-style: none; font-size: 0.88rem; color: var(--text-muted); }
 
     .notes li {
-      padding: 0.35rem 0;
-      padding-left: 1.25rem;
-      position: relative;
+      padding: 0.35rem 0; padding-left: 1.25rem; position: relative;
     }
 
     .notes li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #f59e0b;
-      font-weight: bold;
+      content: "•"; position: absolute; left: 0;
+      color: #f59e0b; font-weight: bold;
     }
 
     footer {
-      text-align: center;
-      font-size: 0.8rem;
+      text-align: center; font-size: 0.8rem;
       color: var(--text-muted);
-      margin-top: 2rem;
-      padding-top: 1.5rem;
+      margin-top: 2rem; padding-top: 1.5rem;
       border-top: 1px solid var(--border);
     }
+
+    /* Edit toolbar */
+    .toolbar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.5rem; flex-wrap: wrap;
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(15,23,42,0.08);
+    }
+
+    .toolbar.editing { border-top-color: #c4b5fd; background: rgba(250,245,255,0.97); }
+
+    .btn {
+      font-family: inherit;
+      font-size: 0.85rem; font-weight: 600;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { background: var(--surface-alt); }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-edit { background: var(--edit); color: #fff; border-color: var(--edit); }
+    .btn-edit:hover { background: #6d28d9; }
+    .btn-edit.active { background: #5b21b6; }
+    .btn-danger { color: #b91c1c; border-color: #fecaca; }
+    .btn-danger:hover { background: #fef2f2; }
+    .btn-sm { font-size: 0.78rem; padding: 0.35rem 0.7rem; }
+
+    .toolbar-hint {
+      font-size: 0.78rem; color: var(--text-muted);
+      width: 100%; text-align: center;
+    }
+
+    .edit-input, .edit-select {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.5rem;
+      border: 1px solid #c4b5fd;
+      border-radius: 6px;
+      background: #faf5ff;
+    }
+
+    .edit-input.amount { font-family: "JetBrains Mono", monospace; text-align: right; }
+
+    .row-actions { display: flex; gap: 0.35rem; margin-top: 0.35rem; }
+    .add-row-btn { margin-top: 0.75rem; }
+
+    .save-indicator {
+      font-size: 0.78rem; color: var(--accent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+
+    .save-indicator.show { opacity: 1; }
+
+    .editable[contenteditable="true"] {
+      outline: 1px dashed #c4b5fd;
+      border-radius: 4px;
+      padding: 0.1rem 0.25rem;
+      min-width: 1rem;
+    }
+
+    body:not(.editing) .edit-only { display: none !important; }
 
     @media (max-width: 768px) {
       .page { padding: 1.25rem 1rem 3rem; }
       .hero { padding: 1.75rem 1.25rem; }
       .hero h1 { font-size: 1.4rem; }
-
       .table-wrap { overflow-x: auto; }
       table { min-width: 640px; }
-
       th, td { padding: 0.7rem 0.75rem; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <h1>日本沖繩消費紀錄</h1>
-      <p>2026 年 6 月 6 日 — 6 月 9 日 · 共 31 筆消費 · 金額無重複</p>
-      <div class="hero-meta">
-        <div class="hero-stat">
-          <div class="label">總消費金額</div>
-          <div class="value">¥266,151</div>
-        </div>
-        <div class="hero-stat">
-          <div class="label">收據筆數</div>
-          <div class="value">31</div>
-        </div>
-        <div class="hero-stat">
-          <div class="label">消費天數</div>
-          <div class="value">4 天</div>
-        </div>
-      </div>
-    </header>
+  <div class="page" id="app"></div>
 
-    <section class="summary-grid" aria-label="大類別統計">
-      <div class="summary-card">
-        <div class="cat">餐飲</div>
-        <div class="amount">¥28,460</div>
-        <div class="count">8 筆</div>
-      </div>
-      <div class="summary-card">
-        <div class="cat">超市・便利商店</div>
-        <div class="amount">¥26,377</div>
-        <div class="count">7 筆</div>
-      </div>
-      <div class="summary-card">
-        <div class="cat">購物・零售</div>
-        <div class="amount">¥172,598</div>
-        <div class="count">7 筆</div>
-      </div>
-      <div class="summary-card">
-        <div class="cat">觀光・門票</div>
-        <div class="amount">¥7,800</div>
-        <div class="count">4 筆</div>
-      </div>
-      <div class="summary-card">
-        <div class="cat">交通</div>
-        <div class="amount">¥14,753</div>
-        <div class="count">3 筆</div>
-      </div>
-      <div class="summary-card">
-        <div class="cat">待確認</div>
-        <div class="amount">¥16,163</div>
-        <div class="count">4 筆</div>
-      </div>
-      <div class="summary-card total">
-        <div>
-          <div class="cat" style="color: var(--accent-dark); font-weight: 600;">合計</div>
-          <div class="count">31 筆獨立消費，無金額重複</div>
-        </div>
-        <div class="amount">¥266,151</div>
-      </div>
-    </section>
-
-    <!-- 6/6 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="date-badge">6/6（土）<span class="subtotal">小計 ¥69,904</span></span>
-        <h2>消費明細</h2>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>時間</th>
-              <th>金額</th>
-              <th>地點</th>
-              <th>項目</th>
-              <th>照片</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="time-cell">13:33</td>
-              <td class="amount-cell">¥1,500</td>
-              <td class="location">豚卵 那覇空港国内線店</td>
-              <td class="items">飯糰 ×2<span class="tag tag-food">餐飲</span></td>
-              <td><span class="photo-ref">213802</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">14:37</td>
-              <td class="amount-cell">¥42,010</td>
-              <td class="location">柳川屋</td>
-              <td class="items">零售購物（信用卡簽單）<span class="tag tag-shop">購物</span></td>
-              <td><span class="photo-ref">214400</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">16:15</td>
-              <td class="amount-cell">¥800</td>
-              <td class="location">店家未載明</td>
-              <td class="items">信用卡簽單，品項不明<span class="tag tag-unknown">待確認</span></td>
-              <td><span class="photo-ref">213807</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">20:27</td>
-              <td class="amount-cell">¥663</td>
-              <td class="location">LAWSON 美浜フィッシャリーナ店（北谷町）</td>
-              <td class="items">冰品 ×3<span class="tag tag-market">便利商店</span></td>
-              <td><span class="photo-ref">214330</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">22:10</td>
-              <td class="amount-cell">¥6,518</td>
-              <td class="location">イオン AEON（WAON 加盟店）</td>
-              <td class="items">超市雜貨 27 項<span class="tag tag-market">超市</span></td>
-              <td><span class="photo-ref">214100</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">23:01</td>
-              <td class="amount-cell">¥463</td>
-              <td class="location">LAWSON 名桜大学前店（名護市）</td>
-              <td class="items">飲料＋日用品<span class="tag tag-market">便利商店</span></td>
-              <td><span class="photo-ref">213821</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">—</td>
-              <td class="amount-cell">¥17,950</td>
-              <td class="location">沖繩料理 かなさんやー（北谷町美浜 3F）</td>
-              <td class="items">沖繩料理套餐多品項<span class="flag">日期待確認</span><span class="tag tag-food">餐飲</span></td>
-              <td><span class="photo-ref">213712</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- 6/7 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="date-badge">6/7（日）<span class="subtotal">小計 ¥41,481</span></span>
-        <h2>消費明細</h2>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>時間</th>
-              <th>金額</th>
-              <th>地點</th>
-              <th>項目</th>
-              <th>照片</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="time-cell">09:14</td>
-              <td class="amount-cell">¥11,000</td>
-              <td class="location">店家未載明</td>
-              <td class="items">信用卡簽單，品項不明<span class="tag tag-unknown">待確認</span></td>
-              <td><span class="photo-ref">214254</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">09:34</td>
-              <td class="amount-cell">¥282</td>
-              <td class="location">LAWSON 名桜大学前店（名護市）</td>
-              <td class="items">礦泉水 ×2<span class="tag tag-market">便利商店</span></td>
-              <td><span class="photo-ref">213828</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">11:04</td>
-              <td class="amount-cell">¥6,000</td>
-              <td class="location">古宇利オーシャンタワー（今帰仁村）</td>
-              <td class="items">入場券 大人 ×6<span class="tag tag-tour">觀光</span></td>
-              <td><span class="photo-ref">213924</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">11:11</td>
-              <td class="amount-cell">¥1,200</td>
-              <td class="location">古宇利オーシャンタワー（今帰仁村）</td>
-              <td class="items">設施消費（品項未明列）<span class="tag tag-tour">觀光</span></td>
-              <td><span class="photo-ref">214244</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">—</td>
-              <td class="amount-cell">¥600</td>
-              <td class="location">万座毛入場施設（恩納村）</td>
-              <td class="items">観覧券 ×6<span class="tag tag-tour">觀光</span></td>
-              <td><span class="photo-ref">214226</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">15:02</td>
-              <td class="amount-cell">¥740</td>
-              <td class="location">シロップ 万座毛（恩納村）</td>
-              <td class="items">綾鷹茶＋木製磁鐵<span class="tag tag-shop">紀念品</span></td>
-              <td><span class="photo-ref">213849</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">17:46</td>
-              <td class="amount-cell">¥3,806</td>
-              <td class="location">ハ・ライスリー・オキナワ（名護）</td>
-              <td class="items">烘焙／甜點<span class="tag tag-food">餐飲</span></td>
-              <td><span class="photo-ref">213921</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">17:46</td>
-              <td class="amount-cell">¥17,853</td>
-              <td class="location">イオン名護店（AEON 琉球）</td>
-              <td class="items">超市雜貨 45 項<span class="flag">日期待確認</span><span class="tag tag-market">超市</span></td>
-              <td><span class="photo-ref">213941</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- 6/8 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="date-badge">6/8（月）<span class="subtotal">小計 ¥145,226</span></span>
-        <h2>消費明細</h2>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>時間</th>
-              <th>金額</th>
-              <th>地點</th>
-              <th>項目</th>
-              <th>照片</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="time-cell">13:27</td>
-              <td class="amount-cell">¥1,110</td>
-              <td class="location">A&amp;W アンドダブリュー</td>
-              <td class="items">速食<span class="tag tag-food">餐飲</span></td>
-              <td><span class="photo-ref">214354</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">13:34</td>
-              <td class="amount-cell">¥1,507</td>
-              <td class="location">鳥と卵の専門店 烏玉（浦添バルコシティ）</td>
-              <td class="items">定食＋生蛋<span class="tag tag-food">餐飲</span></td>
-              <td><span class="photo-ref">214039</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">16:28</td>
-              <td class="amount-cell">¥429</td>
-              <td class="location">THANKYOU MART 浦添バルコシティ店</td>
-              <td class="items">日用品 1 項<span class="tag tag-shop">購物</span></td>
-              <td><span class="photo-ref">214202</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">16:37</td>
-              <td class="amount-cell">¥330</td>
-              <td class="location">3COINS+plus 沖繩パルコシティ店</td>
-              <td class="items">PAL CLOSE T 恤<span class="tag tag-shop">服飾</span></td>
-              <td><span class="photo-ref">214213</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">—</td>
-              <td class="amount-cell">¥2,693</td>
-              <td class="location">店家未載明</td>
-              <td class="items">零售 15 點（信用卡簽單）<span class="tag tag-unknown">待確認</span></td>
-              <td><span class="photo-ref">214311</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">17:29–18:00</td>
-              <td class="amount-cell">¥500</td>
-              <td class="location">ザ・パーク天神前 停車場</td>
-              <td class="items">停車費<span class="tag tag-transport">交通</span></td>
-              <td><span class="photo-ref">214047</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">18:37</td>
-              <td class="amount-cell">¥51,300</td>
-              <td class="location">杉山（098-863-9269）</td>
-              <td class="items">珠寶／精品（推測）<span class="tag tag-shop">購物</span></td>
-              <td><span class="photo-ref">213959</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">18:59</td>
-              <td class="amount-cell">¥6,253</td>
-              <td class="location">加油站（店名未印）</td>
-              <td class="items">汽油 35.13L<span class="tag tag-transport">交通</span></td>
-              <td><span class="photo-ref">214123</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">19:09</td>
-              <td class="amount-cell">¥1,670</td>
-              <td class="location">店家未載明</td>
-              <td class="items">信用卡簽單，品項不明<span class="tag tag-unknown">待確認</span></td>
-              <td><span class="photo-ref">214025</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">19:21</td>
-              <td class="amount-cell">¥598</td>
-              <td class="location">LAWSON 那覇東町店</td>
-              <td class="items">即食麵 ×2<span class="tag tag-market">便利商店</span></td>
-              <td><span class="photo-ref">214153</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">20:15</td>
-              <td class="amount-cell">¥1,047</td>
-              <td class="location">Starbucks 那覇デパートリウボウ店</td>
-              <td class="items">抹茶拿鐵＋熱狗<span class="tag tag-food">餐飲</span></td>
-              <td><span class="photo-ref">214427</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">—</td>
-              <td class="amount-cell">¥25,655</td>
-              <td class="location">蕨田店（店名部分模糊）</td>
-              <td class="items">零售 12 項<span class="tag tag-shop">購物</span></td>
-              <td><span class="photo-ref">214501</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">23:11</td>
-              <td class="amount-cell">¥52,134</td>
-              <td class="location">ドン・キホーテ Don Quijote</td>
-              <td class="items">折扣店購物<span class="tag tag-shop">購物</span></td>
-              <td><span class="photo-ref">214445</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- 6/9 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="date-badge">6/9（火）<span class="subtotal">小計 ¥9,540</span></span>
-        <h2>消費明細</h2>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>時間</th>
-              <th>金額</th>
-              <th>地點</th>
-              <th>項目</th>
-              <th>照片</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="time-cell">—</td>
-              <td class="amount-cell">¥8,000</td>
-              <td class="location">台灣虎航 Tigerair（OKA 那覇機場）</td>
-              <td class="items">機場超重行李 15KG<span class="tag tag-transport">交通</span></td>
-              <td><span class="photo-ref">214336</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">13:12</td>
-              <td class="amount-cell">¥550</td>
-              <td class="location">Blue Seal 那覇空港国際線ターミナル店</td>
-              <td class="items">鹽奶＆紅芋冰淇淋<span class="tag tag-food">餐飲</span></td>
-              <td><span class="photo-ref">214134</span></td>
-            </tr>
-            <tr>
-              <td class="time-cell">15:28</td>
-              <td class="amount-cell">¥990</td>
-              <td class="location">店家未印（收據頂部裁切）</td>
-              <td class="items">水果果汁 ×4<span class="tag tag-food">飲料</span></td>
-              <td><span class="photo-ref">214413</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="notes">
-      <h3>備註</h3>
-      <ul>
-        <li>31 筆消費金額皆不相同，無重複計帳風險。</li>
-        <li>4 張信用卡簽單（¥800、¥11,000、¥1,670、¥2,693）僅有金額，店名與品項待確認。</li>
-        <li>かなさんやー（¥17,950）收據未印日期；イオン名護（¥17,853）日期印刷略模糊。</li>
-        <li>原始照片存放於 <code>發票/</code> 資料夾，檔名對應表中「照片」欄位。</li>
-      </ul>
-    </section>
-
-    <footer>
-      整理日期：2026 年 6 月 19 日 · 資料來源：31 張發票照片
-    </footer>
+  <div class="toolbar" id="toolbar">
+    <button class="btn btn-edit" id="btn-edit" type="button">✏️ 編輯</button>
+    <button class="btn btn-primary edit-only" id="btn-add" type="button">＋ 新增一筆</button>
+    <button class="btn edit-only" id="btn-export" type="button">📥 匯出 JSON</button>
+    <button class="btn edit-only" id="btn-import" type="button">📤 匯入 JSON</button>
+    <button class="btn btn-danger edit-only" id="btn-reset" type="button">↩️ 還原預設</button>
+    <span class="save-indicator" id="save-indicator">已自動儲存</span>
+    <span class="toolbar-hint edit-only">編輯內容儲存在此瀏覽器本機，換裝置請用匯出／匯入同步</span>
   </div>
+
+  <input type="file" id="import-file" accept=".json" hidden>
+
+  <script>
+    const STORAGE_KEY = 'japan-receipts-v1';
+
+    const GROUPS = {
+      food: '餐飲',
+      market: '超市・便利商店',
+      shop: '購物・零售',
+      tour: '觀光・門票',
+      transport: '交通',
+      unknown: '待確認',
+    };
+
+    const TAG_CLASS = {
+      food: 'tag-food', market: 'tag-market', shop: 'tag-shop',
+      tour: 'tag-tour', transport: 'tag-transport', unknown: 'tag-unknown',
+    };
+
+    const DEFAULT_DATA = {
+      meta: {
+        title: '日本沖繩消費紀錄',
+        subtitle: '2026 年 6 月 6 日 — 6 月 9 日',
+        footer: '整理日期：2026 年 6 月 19 日 · 資料來源：31 張發票照片',
+      },
+      notes: [
+        '31 筆消費金額皆不相同，無重複計帳風險。',
+        '4 張信用卡簽單（¥800、¥11,000、¥1,670、¥2,693）僅有金額，店名與品項待確認。',
+        'かなさんやー（¥17,950）收據未印日期；イオン名護（¥17,853）日期印刷略模糊。',
+        '原始照片存放於 發票/ 資料夾，檔名對應表中「照片」欄位。',
+      ],
+      receipts: [
+        { id:1, date:'2026-06-06', time:'13:33', amount:1500, location:'豚卵 那覇空港国内線店', items:'飯糰 ×2', group:'food', tag:'餐飲', photo:'213802', flag:'' },
+        { id:2, date:'2026-06-06', time:'14:37', amount:42010, location:'柳川屋', items:'零售購物（信用卡簽單）', group:'shop', tag:'購物', photo:'214400', flag:'' },
+        { id:3, date:'2026-06-06', time:'16:15', amount:800, location:'店家未載明', items:'信用卡簽單，品項不明', group:'unknown', tag:'待確認', photo:'213807', flag:'' },
+        { id:4, date:'2026-06-06', time:'20:27', amount:663, location:'LAWSON 美浜フィッシャリーナ店（北谷町）', items:'冰品 ×3', group:'market', tag:'便利商店', photo:'214330', flag:'' },
+        { id:5, date:'2026-06-06', time:'22:10', amount:6518, location:'イオン AEON（WAON 加盟店）', items:'超市雜貨 27 項', group:'market', tag:'超市', photo:'214100', flag:'' },
+        { id:6, date:'2026-06-06', time:'23:01', amount:463, location:'LAWSON 名桜大学前店（名護市）', items:'飲料＋日用品', group:'market', tag:'便利商店', photo:'213821', flag:'' },
+        { id:7, date:'2026-06-06', time:'—', amount:17950, location:'沖繩料理 かなさんやー（北谷町美浜 3F）', items:'沖繩料理套餐多品項', group:'food', tag:'餐飲', photo:'213712', flag:'日期待確認' },
+        { id:8, date:'2026-06-07', time:'09:14', amount:11000, location:'店家未載明', items:'信用卡簽單，品項不明', group:'unknown', tag:'待確認', photo:'214254', flag:'' },
+        { id:9, date:'2026-06-07', time:'09:34', amount:282, location:'LAWSON 名桜大学前店（名護市）', items:'礦泉水 ×2', group:'market', tag:'便利商店', photo:'213828', flag:'' },
+        { id:10, date:'2026-06-07', time:'11:04', amount:6000, location:'古宇利オーシャンタワー（今帰仁村）', items:'入場券 大人 ×6', group:'tour', tag:'觀光', photo:'213924', flag:'' },
+        { id:11, date:'2026-06-07', time:'11:11', amount:1200, location:'古宇利オーシャンタワー（今帰仁村）', items:'設施消費（品項未明列）', group:'tour', tag:'觀光', photo:'214244', flag:'' },
+        { id:12, date:'2026-06-07', time:'—', amount:600, location:'万座毛入場施設（恩納村）', items:'観覧券 ×6', group:'tour', tag:'觀光', photo:'214226', flag:'' },
+        { id:13, date:'2026-06-07', time:'15:02', amount:740, location:'シロップ 万座毛（恩納村）', items:'綾鷹茶＋木製磁鐵', group:'shop', tag:'紀念品', photo:'213849', flag:'' },
+        { id:14, date:'2026-06-07', time:'17:46', amount:3806, location:'ハ・ライスリー・オキナワ（名護）', items:'烘焙／甜點', group:'food', tag:'餐飲', photo:'213921', flag:'' },
+        { id:15, date:'2026-06-07', time:'17:46', amount:17853, location:'イオン名護店（AEON 琉球）', items:'超市雜貨 45 項', group:'market', tag:'超市', photo:'213941', flag:'日期待確認' },
+        { id:16, date:'2026-06-08', time:'13:27', amount:1110, location:'A&W アンドダブリュー', items:'速食', group:'food', tag:'餐飲', photo:'214354', flag:'' },
+        { id:17, date:'2026-06-08', time:'13:34', amount:1507, location:'鳥と卵の専門店 烏玉（浦添バルコシティ）', items:'定食＋生蛋', group:'food', tag:'餐飲', photo:'214039', flag:'' },
+        { id:18, date:'2026-06-08', time:'16:28', amount:429, location:'THANKYOU MART 浦添バルコシティ店', items:'日用品 1 項', group:'shop', tag:'購物', photo:'214202', flag:'' },
+        { id:19, date:'2026-06-08', time:'16:37', amount:330, location:'3COINS+plus 沖繩パルコシティ店', items:'PAL CLOSE T 恤', group:'shop', tag:'服飾', photo:'214213', flag:'' },
+        { id:20, date:'2026-06-08', time:'—', amount:2693, location:'店家未載明', items:'零售 15 點（信用卡簽單）', group:'unknown', tag:'待確認', photo:'214311', flag:'' },
+        { id:21, date:'2026-06-08', time:'17:29–18:00', amount:500, location:'ザ・パーク天神前 停車場', items:'停車費', group:'transport', tag:'交通', photo:'214047', flag:'' },
+        { id:22, date:'2026-06-08', time:'18:37', amount:51300, location:'杉山（098-863-9269）', items:'珠寶／精品（推測）', group:'shop', tag:'購物', photo:'213959', flag:'' },
+        { id:23, date:'2026-06-08', time:'18:59', amount:6253, location:'加油站（店名未印）', items:'汽油 35.13L', group:'transport', tag:'交通', photo:'214123', flag:'' },
+        { id:24, date:'2026-06-08', time:'19:09', amount:1670, location:'店家未載明', items:'信用卡簽單，品項不明', group:'unknown', tag:'待確認', photo:'214025', flag:'' },
+        { id:25, date:'2026-06-08', time:'19:21', amount:598, location:'LAWSON 那覇東町店', items:'即食麵 ×2', group:'market', tag:'便利商店', photo:'214153', flag:'' },
+        { id:26, date:'2026-06-08', time:'20:15', amount:1047, location:'Starbucks 那覇デパートリウボウ店', items:'抹茶拿鐵＋熱狗', group:'food', tag:'餐飲', photo:'214427', flag:'' },
+        { id:27, date:'2026-06-08', time:'—', amount:25655, location:'蕨田店（店名部分模糊）', items:'零售 12 項', group:'shop', tag:'購物', photo:'214501', flag:'' },
+        { id:28, date:'2026-06-08', time:'23:11', amount:52134, location:'ドン・キホーテ Don Quijote', items:'折扣店購物', group:'shop', tag:'購物', photo:'214445', flag:'' },
+        { id:29, date:'2026-06-09', time:'—', amount:8000, location:'台灣虎航 Tigerair（OKA 那覇機場）', items:'機場超重行李 15KG', group:'transport', tag:'交通', photo:'214336', flag:'' },
+        { id:30, date:'2026-06-09', time:'13:12', amount:550, location:'Blue Seal 那覇空港国際線ターミナル店', items:'鹽奶＆紅芋冰淇淋', group:'food', tag:'餐飲', photo:'214134', flag:'' },
+        { id:31, date:'2026-06-09', time:'15:28', amount:990, location:'店家未印（收據頂部裁切）', items:'水果果汁 ×4', group:'food', tag:'飲料', photo:'214413', flag:'' },
+      ],
+    };
+
+    let data = loadData();
+    let editing = false;
+    let nextId = Math.max(0, ...data.receipts.map(r => r.id)) + 1;
+
+    function loadData() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) return JSON.parse(saved);
+      } catch (_) {}
+      return structuredClone(DEFAULT_DATA);
+    }
+
+    function saveData() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      const el = document.getElementById('save-indicator');
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 2000);
+    }
+
+    function fmt(n) {
+      return '¥' + Number(n).toLocaleString('ja-JP');
+    }
+
+    function dateLabel(dateStr) {
+      const d = new Date(dateStr + 'T12:00:00');
+      const days = ['日','一','二','三','四','五','六'];
+      const m = d.getMonth() + 1;
+      const day = d.getDate();
+      return `${m}/${day}（${days[d.getDay()]}）`;
+    }
+
+    function photoLink(ref) {
+      if (!ref) return '';
+      const fname = ref.startsWith('2026') ? ref : `20260619_${ref}.jpg`;
+      return `發票/${fname}`;
+    }
+
+    function calcStats() {
+      const total = data.receipts.reduce((s, r) => s + Number(r.amount || 0), 0);
+      const dates = new Set(data.receipts.map(r => r.date));
+      const byGroup = {};
+      Object.keys(GROUPS).forEach(g => { byGroup[g] = { amount: 0, count: 0 }; });
+      data.receipts.forEach(r => {
+        const g = r.group || 'unknown';
+        if (!byGroup[g]) byGroup[g] = { amount: 0, count: 0 };
+        byGroup[g].amount += Number(r.amount || 0);
+        byGroup[g].count += 1;
+      });
+      return { total, days: dates.size, byGroup };
+    }
+
+    function groupByDate() {
+      const map = new Map();
+      data.receipts
+        .slice()
+        .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))
+        .forEach(r => {
+          if (!map.has(r.date)) map.set(r.date, []);
+          map.get(r.date).push(r);
+        });
+      return map;
+    }
+
+    function render() {
+      const stats = calcStats();
+      const grouped = groupByDate();
+      const app = document.getElementById('app');
+
+      let summaryHtml = '';
+      Object.entries(GROUPS).forEach(([key, label]) => {
+        const g = stats.byGroup[key] || { amount: 0, count: 0 };
+        if (g.count === 0) return;
+        summaryHtml += `
+          <div class="summary-card">
+            <div class="cat">${label}</div>
+            <div class="amount">${fmt(g.amount)}</div>
+            <div class="count">${g.count} 筆</div>
+          </div>`;
+      });
+
+      summaryHtml += `
+        <div class="summary-card total">
+          <div>
+            <div class="cat" style="color:var(--accent-dark);font-weight:600;">合計</div>
+            <div class="count">${data.receipts.length} 筆消費</div>
+          </div>
+          <div class="amount">${fmt(stats.total)}</div>
+        </div>`;
+
+      let sectionsHtml = '';
+      grouped.forEach((rows, date) => {
+        const subtotal = rows.reduce((s, r) => s + Number(r.amount || 0), 0);
+        sectionsHtml += `
+          <section class="section" data-date="${date}">
+            <div class="section-header">
+              <span class="date-badge">${dateLabel(date)}<span class="subtotal">小計 ${fmt(subtotal)}</span></span>
+              <h2>消費明細</h2>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>時間</th><th>金額</th><th>地點</th><th>項目</th><th>照片</th>
+                    ${editing ? '<th class="edit-only">操作</th>' : ''}
+                  </tr>
+                </thead>
+                <tbody>
+                  ${rows.map(r => renderRow(r)).join('')}
+                </tbody>
+              </table>
+            </div>
+            ${editing ? `<button class="btn btn-sm btn-primary add-row-btn edit-only" data-add-date="${date}" type="button">＋ 此日新增一筆</button>` : ''}
+          </section>`;
+      });
+
+      const notesHtml = data.notes.map((n, i) =>
+        editing
+          ? `<li><span class="editable" contenteditable="true" data-note="${i}">${esc(n)}</span></li>`
+          : `<li>${esc(n)}</li>`
+      ).join('');
+
+      app.innerHTML = `
+        <header class="hero">
+          <h1 ${editing ? 'class="editable" contenteditable="true" data-field="title"' : ''}>${esc(data.meta.title)}</h1>
+          <p ${editing ? 'class="editable" contenteditable="true" data-field="subtitle"' : ''}>${esc(data.meta.subtitle)} · 共 ${data.receipts.length} 筆消費</p>
+          <div class="hero-meta">
+            <div class="hero-stat">
+              <div class="label">總消費金額</div>
+              <div class="value">${fmt(stats.total)}</div>
+            </div>
+            <div class="hero-stat">
+              <div class="label">收據筆數</div>
+              <div class="value">${data.receipts.length}</div>
+            </div>
+            <div class="hero-stat">
+              <div class="label">消費天數</div>
+              <div class="value">${stats.days} 天</div>
+            </div>
+          </div>
+        </header>
+        <section class="summary-grid" aria-label="大類別統計">${summaryHtml}</section>
+        ${sectionsHtml}
+        <section class="notes">
+          <h3>備註</h3>
+          <ul>${notesHtml}</ul>
+          ${editing ? '<button class="btn btn-sm edit-only" id="btn-add-note" type="button" style="margin-top:0.75rem;">＋ 新增備註</button>' : ''}
+        </section>
+        <footer ${editing ? 'class="editable" contenteditable="true" data-field="footer"' : ''}>${esc(data.meta.footer)}</footer>`;
+
+      bindEvents();
+    }
+
+    function renderRow(r) {
+      const tagClass = TAG_CLASS[r.group] || 'tag-unknown';
+      const flag = r.flag ? `<span class="flag">${esc(r.flag)}</span>` : '';
+      const href = photoLink(r.photo);
+
+      if (!editing) {
+        return `<tr data-id="${r.id}">
+          <td class="time-cell">${esc(r.time)}</td>
+          <td class="amount-cell">${fmt(r.amount)}</td>
+          <td class="location">${esc(r.location)}</td>
+          <td class="items">${esc(r.items)}${flag}<span class="tag ${tagClass}">${esc(r.tag)}</span></td>
+          <td><span class="photo-ref">${href ? `<a href="${href}" target="_blank">${esc(r.photo)}</a>` : esc(r.photo)}</span></td>
+        </tr>`;
+      }
+
+      const groupOpts = Object.entries(GROUPS).map(([k, v]) =>
+        `<option value="${k}" ${r.group === k ? 'selected' : ''}>${v}</option>`
+      ).join('');
+
+      return `<tr data-id="${r.id}">
+        <td><input class="edit-input" data-f="time" value="${escAttr(r.time)}"></td>
+        <td><input class="edit-input amount" data-f="amount" type="number" value="${r.amount}"></td>
+        <td><input class="edit-input" data-f="location" value="${escAttr(r.location)}"></td>
+        <td>
+          <input class="edit-input" data-f="items" value="${escAttr(r.items)}">
+          <input class="edit-input" data-f="tag" value="${escAttr(r.tag)}" placeholder="標籤" style="margin-top:0.35rem;">
+          <input class="edit-input" data-f="flag" value="${escAttr(r.flag)}" placeholder="備註旗標（可留空）" style="margin-top:0.35rem;">
+          <select class="edit-select" data-f="group" style="margin-top:0.35rem;">${groupOpts}</select>
+        </td>
+        <td><input class="edit-input" data-f="photo" value="${escAttr(r.photo)}"></td>
+        <td class="edit-only">
+          <button class="btn btn-sm btn-danger" data-del="${r.id}" type="button">刪除</button>
+        </td>
+      </tr>`;
+    }
+
+    function esc(s) {
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function escAttr(s) { return esc(s).replace(/'/g,'&#39;'); }
+
+    function bindEvents() {
+      document.querySelectorAll('[data-add-date]').forEach(btn => {
+        btn.onclick = () => {
+          data.receipts.push({
+            id: nextId++, date: btn.dataset.addDate, time: '—',
+            amount: 0, location: '', items: '', group: 'food',
+            tag: '餐飲', photo: '', flag: '',
+          });
+          saveData(); render();
+        };
+      });
+
+      document.querySelectorAll('[data-del]').forEach(btn => {
+        btn.onclick = () => {
+          if (!confirm('確定刪除此筆消費？')) return;
+          const id = Number(btn.dataset.del);
+          data.receipts = data.receipts.filter(r => r.id !== id);
+          saveData(); render();
+        };
+      });
+
+      document.querySelectorAll('tr[data-id] input, tr[data-id] select').forEach(el => {
+        const save = () => {
+          const row = el.closest('tr');
+          const id = Number(row.dataset.id);
+          const r = data.receipts.find(x => x.id === id);
+          if (!r) return;
+          const f = el.dataset.f;
+          r[f] = f === 'amount' ? Number(el.value) || 0 : el.value;
+          saveData();
+          updateSubtotals();
+        };
+        el.addEventListener('change', save);
+        el.addEventListener('blur', save);
+      });
+
+      document.querySelectorAll('[data-field]').forEach(el => {
+        el.addEventListener('blur', () => {
+          data.meta[el.dataset.field] = el.textContent.trim();
+          saveData();
+        });
+      });
+
+      document.querySelectorAll('[data-note]').forEach(el => {
+        el.addEventListener('blur', () => {
+          data.notes[Number(el.dataset.note)] = el.textContent.trim();
+          saveData();
+        });
+      });
+
+      const addNote = document.getElementById('btn-add-note');
+      if (addNote) {
+        addNote.onclick = () => {
+          data.notes.push('新備註');
+          saveData(); render();
+        };
+      }
+    }
+
+    function updateSubtotals() {
+      const stats = calcStats();
+      document.querySelectorAll('.hero-stat .value')[0].textContent = fmt(stats.total);
+      document.querySelectorAll('.hero-stat .value')[1].textContent = data.receipts.length;
+      document.querySelectorAll('.hero-stat .value')[2].textContent = stats.days + ' 天';
+      document.querySelectorAll('.summary-grid')[0].outerHTML =
+        '<section class="summary-grid" aria-label="大類別統計">' +
+        (() => {
+          let html = '';
+          Object.entries(GROUPS).forEach(([key, label]) => {
+            const g = stats.byGroup[key] || { amount: 0, count: 0 };
+            if (g.count === 0) return;
+            html += `<div class="summary-card"><div class="cat">${label}</div><div class="amount">${fmt(g.amount)}</div><div class="count">${g.count} 筆</div></div>`;
+          });
+          html += `<div class="summary-card total"><div><div class="cat" style="color:var(--accent-dark);font-weight:600;">合計</div><div class="count">${data.receipts.length} 筆消費</div></div><div class="amount">${fmt(stats.total)}</div></div>`;
+          return html;
+        })() + '</section>';
+
+      groupByDate().forEach((rows, date) => {
+        const subtotal = rows.reduce((s, r) => s + Number(r.amount || 0), 0);
+        const section = document.querySelector(`section[data-date="${date}"] .subtotal`);
+        if (section) section.textContent = '小計 ' + fmt(subtotal);
+      });
+    }
+
+    function toggleEdit() {
+      editing = !editing;
+      document.body.classList.toggle('editing', editing);
+      document.getElementById('toolbar').classList.toggle('editing', editing);
+      const btn = document.getElementById('btn-edit');
+      btn.textContent = editing ? '✅ 完成編輯' : '✏️ 編輯';
+      btn.classList.toggle('active', editing);
+      render();
+    }
+
+    document.getElementById('btn-edit').onclick = toggleEdit;
+
+    document.getElementById('btn-add').onclick = () => {
+      const today = data.receipts.length ? data.receipts[data.receipts.length - 1].date : '2026-06-09';
+      data.receipts.push({
+        id: nextId++, date: today, time: '—',
+        amount: 0, location: '', items: '', group: 'food',
+        tag: '餐飲', photo: '', flag: '',
+      });
+      saveData(); render();
+    };
+
+    document.getElementById('btn-export').onclick = () => {
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'japan-receipts.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    };
+
+    document.getElementById('btn-import').onclick = () => {
+      document.getElementById('import-file').click();
+    };
+
+    document.getElementById('import-file').onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const imported = JSON.parse(reader.result);
+          if (!imported.receipts || !imported.meta) throw new Error('格式不正確');
+          data = imported;
+          nextId = Math.max(0, ...data.receipts.map(r => r.id)) + 1;
+          saveData(); render();
+          alert('匯入成功！');
+        } catch (err) {
+          alert('匯入失敗：' + err.message);
+        }
+      };
+      reader.readAsText(file);
+      e.target.value = '';
+    };
+
+    document.getElementById('btn-reset').onclick = () => {
+      if (!confirm('確定還原為預設資料？所有本機修改將清除。')) return;
+      data = structuredClone(DEFAULT_DATA);
+      nextId = 32;
+      saveData(); render();
+    };
+
+    render();
+  </script>
 </body>
 </html>
